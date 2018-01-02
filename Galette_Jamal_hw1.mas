@@ -1,0 +1,49 @@
+// Jamal Galette
+// CGS3269
+// HW 1
+// SEPT. 15 2016
+
+ORG 50     			/Start here
+    Input       		/Get the user's input
+    Output      		/Display number to screen
+    Store   	a    		/Store the number in variable a
+
+    Input       		/Request user for a second number
+    Output      		/Display number
+    Store   	b    		/Store number in variable b
+
+    Input       		/Request user for third number
+    Output      		/Display number to screen
+    Store   	c    		/Show number in variable c
+
+Loop,   	Load    a    	/Load the first number and loop
+    Add 	Sum 		/Add with zero and location which will save the sum of numbers
+    Store   	Sum 		/Store the sum 
+    Load    	b   		/Load the second number for the skip 
+    Subt    	One 		/decrement the number
+    Store   	b    		/Store the number. When 0, code will skip the jump completly
+    Skipcond 	400    		/Skip when the second number reaches zero
+    Jump    	Loop    	/Used to repeat addition until second number reaches zero
+    Load    	Sum
+    Store   	a    		/Storing sum in NumA slot to make code easier to read
+
+Looptwo,     Load    a	/Loading the previous sum of a
+    Add	    	SecondSum   	/Adding previous sum to zero and final sum location
+    Store   	SecondSum   	/Storing final sum into secondsum variable
+    Load    	c    		/Second skip condition control
+    Subt    	One 		/Decrememting number
+    Store   	c    		/Storing skip condition
+    Skipcond 	400    		/When the third inputed number is zero, loop will finish/end
+    Jump    	Looptwo    	/Loops back to first loop
+    Load    	SecondSum   	/load the final sum for output
+    Output      		/Display final sum
+    HALT
+
+
+
+a,   		Dec 0   	/The first number inputted; Will be overwritten with input
+b,   		Dec 0   	/Second number inputted to mutiply
+c,   		Dec 0   	/Third number inputted to mutiply
+Sum,    	Dec 0   	/Stores the sum for the first multiplication process
+SecondSum,   	Dec 0   	/Stores sum for the second multiplication process
+One,    	Dec 1   	/Used to decrement values

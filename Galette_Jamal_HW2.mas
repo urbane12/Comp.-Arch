@@ -1,0 +1,60 @@
+// Jamal Galette
+// CGS3269
+// HW 2
+// OCT. 19 2016
+
+org 50
+	input 
+	store a
+	output
+	input 
+	store b
+	output
+	JnS prod 
+	Load sum
+	input
+	store c
+	input
+	store a
+	output
+	input
+	store b
+	output
+	jns prod
+	load sum
+	store d
+	load c
+	store a
+	load d
+	store b
+	JnS prod
+	load sum
+	store gold
+	output
+	halt 
+// Variables
+	gold, dec 0
+	sum, dec 0
+	one, dec 1
+	httr, dec 0
+	a, dec 0
+	b, dec 0
+	c, dec 0
+	d, dec 0
+
+
+	prod, hex 0
+	load b 
+	store httr
+	clear
+	store sum 
+Loop, Load sum
+	Add a
+	Store sum
+	Load httr
+	Subt one
+	Store httr
+	Skipcond 400
+	Jump Loop
+	load sum
+	JumpI prod
